@@ -1,0 +1,11 @@
+/functions/node_modules
+/node_modules
+npm-debug.log
+
+# LOG files #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store

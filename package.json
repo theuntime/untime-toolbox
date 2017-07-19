@@ -1,0 +1,31 @@
+{
+  "name": "untime-toolbox",
+  "version": "1.0.0",
+  "description": "Handy toolbox for After Effects",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress",
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonypinkevych/untime-toolbox.git"
+  },
+  "keywords": [
+    "after",
+    "effects",
+    "script",
+    "untime"
+  ],
+  "author": "Tony Pinkevych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonypinkevych/untime-toolbox/issues"
+  },
+  "homepage": "https://github.com/tonypinkevych/untime-toolbox#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
