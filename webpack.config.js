@@ -25,7 +25,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['react-hot-loader', 'babel-loader'],
+        use: ['babel-loader'],
       },
     ],
   },
@@ -38,10 +38,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
 
-  plugins: debug ? [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ] : [
+  plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
