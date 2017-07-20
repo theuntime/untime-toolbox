@@ -1,5 +1,7 @@
 const settings = require('./config/settings');
 
+const changeBGcolor = require('./helpers/changeBgColor');
+
 const launchOnionSkin = require('./controllers/onionSkin');
 const createNull = require('./controllers/createNull');
 const createFolders = require('./controllers/createFolders');
@@ -27,13 +29,13 @@ const myScriptBuildUI = (thisObj) => {
 	groupOne.orientation = 'row';
 
 	const separator01 = mainGrp.add('group', settings.general.separatorSize);
-	changeBGcolor(separator01, [0, 0, 0, .2]);
+	changeBGcolor(separator01, [0, 0, 0, 0.2]);
 
 	const groupTwo = mainGrp.add('group', undefined);
 	groupTwo.orientation = 'row';
 
 	const separator02 = mainGrp.add('group', settings.general.separatorSize);
-	changeBGcolor(separator02, [0, 0, 0, .2]);
+	changeBGcolor(separator02, [0, 0, 0, 0.2]);
 
 	const groupThree = mainGrp.add('group', undefined);
 	groupThree.orientation = 'row';
@@ -85,7 +87,7 @@ const myScriptBuildUI = (thisObj) => {
 	myPanel.layout.layout(true);
 	myPanel.minimumSize = mainGrp.size;
 	myPanel.layout.resize();
-	myPanel.onResizing = myPanel.onResize = () => this.layout.resize();
+	myPanel.onResizing = myPanel.onResize = () => thisObj.layout.resize();
 
 	return myPanel;
 };
@@ -93,10 +95,11 @@ const myScriptBuildUI = (thisObj) => {
 const myScript = (thisObj) => {
 	const myScriptPal = myScriptBuildUI(thisObj);
 
-	// if ((myScriptPal != null) && (myScriptPal instanceof Window)) {
-	// 	myScriptPal.center();
-	// 	myScriptPal.show();
-	// }
+	if ((myScriptPal != null) && (myScriptPal instanceof Window)) {
+		myScriptPal.center();
+		myScriptPal.show();
+	}
 };
 
-myScript(this);
+// add script to global variable
+__global__.run = (panel) => myScript(panel);

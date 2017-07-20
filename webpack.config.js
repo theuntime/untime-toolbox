@@ -11,7 +11,7 @@ module.exports = {
   devtool: debug ? 'eval' : false,
 
   entry: {
-    UntimeToolbox: './src/index.js',
+    source: './src/index.js',
   },
 
   output: {
@@ -45,9 +45,6 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: false,
-      sourcemap: false,
-    }),
+    new webpack.optimize.UglifyJsPlugin(),
   ],
 };
