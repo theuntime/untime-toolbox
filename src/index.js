@@ -12,8 +12,6 @@ const clearShape = require('./controllers/clearShape');
 const separateShapesDifferentLayers = require('./controllers/extractShapeDifferentLayers');
 const separateShapesSingleLayer = require('./controllers/extractShapeSingleLayer');
 
-Image.prototype.onDraw = require('./prototypes/imageDraw');
-
 const loadImage = require('./helpers/loadImage');
 const createNullIcon = require('./icons/createNull.png');
 const onionSkinIcon = require('./icons/onionSkin.png');
