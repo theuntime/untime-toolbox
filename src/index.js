@@ -57,32 +57,32 @@ const myScriptBuildUI = (thisObj) => {
 	onionSkinButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.onionSkin, { style: 'toolbutton', toggle: false });
 	onionSkinButton.size = settings.general.buttonsSize;
 	onionSkinButton.onClick = launchOnionSkin;
-	onionSkinButton.helpTip = 'Enable/Disable Onion Skin';
+	onionSkinButton.helpTip = 'Enable or Disable Onion Skin';
 
 	createFoldersButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.addFolder, { style: 'toolbutton', toggle: false });
 	createFoldersButton.size = settings.general.buttonsSize;
 	createFoldersButton.onClick = createFolders;
-	createFoldersButton.helpTip = 'Create Folders';
+	createFoldersButton.helpTip = 'Create default Folders';
 
 	setSameLabelColorsButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.labelFolder, { style: 'toolbutton', toggle: false });
 	setSameLabelColorsButton.size = settings.general.buttonsSize;
 	setSameLabelColorsButton.onClick = setSameLabelColors;
-	setSameLabelColorsButton.helpTip = 'Change label of Folders';
+	setSameLabelColorsButton.helpTip = 'Change label colors of Folders';
 
 	clearShapeButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.clearShape, { style: 'toolbutton', toggle: false });
 	clearShapeButton.size = settings.general.buttonsSize;
 	clearShapeButton.onClick = clearShape;
-	clearShapeButton.helpTip = 'Clear Shape';
+	clearShapeButton.helpTip = 'Remove additional groups from shapes after \'Create Shape Layers\' command';
 
 	separateShapesSingleLayerButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.separateShapesSingleLayer, { style: 'toolbutton', toggle: false });
 	separateShapesSingleLayerButton.size = settings.general.buttonsSize;
 	separateShapesSingleLayerButton.onClick = separateShapesSingleLayer;
-	separateShapesSingleLayerButton.helpTip = 'Separate shape into single layer';
+	separateShapesSingleLayerButton.helpTip = 'Subshapes to single layer';
 
 	separateShapesDifferentLayersButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.separateShapesDifferentLayers, { style: 'toolbutton', toggle: false });
 	separateShapesDifferentLayersButton.size = settings.general.buttonsSize;
 	separateShapesDifferentLayersButton.onClick = separateShapesDifferentLayers;
-	separateShapesDifferentLayersButton.helpTip = 'Separate shape into different layers';
+	separateShapesDifferentLayersButton.helpTip = 'Subshapes to different layers';
 
 	creaditsButton = groupThree.add('iconbutton', [0, 0, 18, 18], loadImage(untimeLogo), { style: 'toolbutton', toggle: false });
 	creaditsButton.size = settings.general.buttonsSize;
