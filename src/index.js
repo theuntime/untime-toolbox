@@ -15,12 +15,14 @@ const separateShapesSingleLayer = require('./controllers/extractShapeSingleLayer
 Image.prototype.onDraw = require('./prototypes/imageDraw');
 
 const loadImage = require('./helpers/loadImage');
-const untimeLogo = require('./icons/untime.png');
-
-const icons = require('./icons/icons');
-const loadImages = require('./helpers/loadImages');
-
-const buttonIcons = loadImages(icons);
+const createNullIcon = require('./icons/createNull.png');
+const onionSkinIcon = require('./icons/onionSkin.png');
+const addFoldersIcon = require('./icons/addFolders.png');
+const fillFoldersIcon = require('./icons/fillFolders.png');
+const clearShapeIcon = require('./icons/clearShape.png');
+const subpshapesToSingleIcon = require('./icons/subshapesToSingle.png');
+const subpshapesToDifferentIcon = require('./icons/subshapesToDifferent.png');
+const untimeLogoIcon = require('./icons/untime.png');
 
 const myScriptBuildUI = (thisObj) => {
 	const myPanel = (thisObj instanceof Panel) ?
@@ -49,42 +51,42 @@ const myScriptBuildUI = (thisObj) => {
 	groupThree.orientation = 'row';
 	// set groups  <
 	// set buttons >
-	const createNullButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.createNull, { style: 'toolbutton', toggle: false });
+	const createNullButton = groupOne.add('iconbutton', [0, 0, 24, 24], loadImage(createNullIcon), { style: 'toolbutton', toggle: false });
 	createNullButton.size = settings.general.buttonsSize;
 	createNullButton.onClick = createNull;
 	createNullButton.helpTip = 'Create a Null';
 
-	onionSkinButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.onionSkin, { style: 'toolbutton', toggle: false });
+	onionSkinButton = groupOne.add('iconbutton', [0, 0, 24, 24], loadImage(onionSkinIcon), { style: 'toolbutton', toggle: false });
 	onionSkinButton.size = settings.general.buttonsSize;
 	onionSkinButton.onClick = launchOnionSkin;
 	onionSkinButton.helpTip = 'Enable or Disable Onion Skin';
 
-	createFoldersButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.addFolder, { style: 'toolbutton', toggle: false });
+	createFoldersButton = groupOne.add('iconbutton', [0, 0, 24, 24], loadImage(addFoldersIcon), { style: 'toolbutton', toggle: false });
 	createFoldersButton.size = settings.general.buttonsSize;
 	createFoldersButton.onClick = createFolders;
 	createFoldersButton.helpTip = 'Create default Folders';
 
-	setSameLabelColorsButton = groupOne.add('iconbutton', [0, 0, 24, 24], buttonIcons.labelFolder, { style: 'toolbutton', toggle: false });
+	setSameLabelColorsButton = groupOne.add('iconbutton', [0, 0, 24, 24], loadImage(fillFoldersIcon), { style: 'toolbutton', toggle: false });
 	setSameLabelColorsButton.size = settings.general.buttonsSize;
 	setSameLabelColorsButton.onClick = setSameLabelColors;
 	setSameLabelColorsButton.helpTip = 'Change label colors of Folders';
 
-	clearShapeButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.clearShape, { style: 'toolbutton', toggle: false });
+	clearShapeButton = groupTwo.add('iconbutton', [0, 0, 24, 24], loadImage(clearShapeIcon), { style: 'toolbutton', toggle: false });
 	clearShapeButton.size = settings.general.buttonsSize;
 	clearShapeButton.onClick = clearShape;
 	clearShapeButton.helpTip = 'Remove additional groups from shapes after \'Create Shape Layers\' command';
 
-	separateShapesSingleLayerButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.separateShapesSingleLayer, { style: 'toolbutton', toggle: false });
+	separateShapesSingleLayerButton = groupTwo.add('iconbutton', [0, 0, 24, 24], loadImage(subpshapesToSingleIcon), { style: 'toolbutton', toggle: false });
 	separateShapesSingleLayerButton.size = settings.general.buttonsSize;
 	separateShapesSingleLayerButton.onClick = separateShapesSingleLayer;
 	separateShapesSingleLayerButton.helpTip = 'Subshapes to single layer';
 
-	separateShapesDifferentLayersButton = groupTwo.add('iconbutton', [0, 0, 24, 24], buttonIcons.separateShapesDifferentLayers, { style: 'toolbutton', toggle: false });
+	separateShapesDifferentLayersButton = groupTwo.add('iconbutton', [0, 0, 24, 24], loadImage(subpshapesToDifferentIcon), { style: 'toolbutton', toggle: false });
 	separateShapesDifferentLayersButton.size = settings.general.buttonsSize;
 	separateShapesDifferentLayersButton.onClick = separateShapesDifferentLayers;
 	separateShapesDifferentLayersButton.helpTip = 'Subshapes to different layers';
 
-	creaditsButton = groupThree.add('iconbutton', [0, 0, 18, 18], loadImage(untimeLogo), { style: 'toolbutton', toggle: false });
+	creaditsButton = groupThree.add('iconbutton', [0, 0, 18, 18], loadImage(untimeLogoIcon), { style: 'toolbutton', toggle: false });
 	creaditsButton.size = settings.general.buttonsSize;
 	creaditsButton.onClick = () => openUrl('https://untimestudio.com');
 	creaditsButton.helpTip = 'Untime Studio';
