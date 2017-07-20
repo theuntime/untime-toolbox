@@ -1,3 +1,5 @@
+const openUrl = require('./helpers/openUrl');
+
 const settings = require('./config/settings');
 
 const changeBGcolor = require('./helpers/changeBgColor');
@@ -12,7 +14,13 @@ const separateShapesSingleLayer = require('./controllers/extractShapeSingleLayer
 
 Image.prototype.onDraw = require('./prototypes/imageDraw');
 
-const buttonIcons = require('./files/buttons');
+const loadImage = require('./helpers/loadImage');
+const untimeLogo = require('./icons/untime.png');
+
+const icons = require('./icons/icons');
+const loadImages = require('./helpers/loadImages');
+
+const buttonIcons = loadImages(icons);
 
 const myScriptBuildUI = (thisObj) => {
 	const myPanel = (thisObj instanceof Panel) ?
@@ -76,11 +84,15 @@ const myScriptBuildUI = (thisObj) => {
 	separateShapesDifferentLayersButton.onClick = separateShapesDifferentLayers;
 	separateShapesDifferentLayersButton.helpTip = 'Separate shape into different layers';
 
-	// settingsButton = groupThree.add('button', undefined, 'S');
-	// settingsButton.size = settings.general.buttonsSize;
-	// settingsButton.onClick = openSettings;
-	// settingsButton.helpTip = 'Settings';
-	// settingsButton.enabled = false;
+	creaditsButton = groupThree.add('iconbutton', [0, 0, 18, 18], loadImage(untimeLogo), { style: 'toolbutton', toggle: false });
+	creaditsButton.size = settings.general.buttonsSize;
+	creaditsButton.onClick = () => openUrl('https://untimestudio.com');
+	creaditsButton.helpTip = 'Untime Studio';
+
+	helpButton = groupThree.add('button', undefined, '?');
+	helpButton.size = settings.general.buttonsSize;
+	helpButton.onClick = () => openUrl('https://github.com/tonypinkevych/untime-toolbox');
+	helpButton.helpTip = 'Help';
 	// set buttons <
 
 	// Setup panel sizing and make panel resizable

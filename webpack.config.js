@@ -1,4 +1,5 @@
 require('babel-loader');
+require('binary-loader');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -26,6 +27,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.(png|svg)/,
+        exclude: /node_modules/,
+        use: ['binary-loader'],
       },
     ],
   },
