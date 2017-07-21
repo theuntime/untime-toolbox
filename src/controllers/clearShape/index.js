@@ -1,6 +1,7 @@
 module.exports = function clearShape() {
   app.beginUndoGroup('Clear Shape');
   const thisComp = app.project.activeItem;
+
   if (thisComp !== null) {
     const selectedLayers = thisComp.selectedLayers;
     if (selectedLayers != null) {
@@ -26,7 +27,6 @@ module.exports = function clearShape() {
         }
       }
 
-      const thisComp = app.project.activeItem;
       if (thisComp && thisComp instanceof CompItem) {
         for (let i = 0; i < thisComp.selectedLayers.length; i += 1) {
           const layer = thisComp.selectedLayers[i];
