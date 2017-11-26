@@ -91,7 +91,7 @@ eval("\n\n// CHECKS FOR USER OS\nvar getOS = function getOS() {\n  var op = $.os
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nmodule.exports = function changeBGcolor(button, color) {\n  button.graphics.backgroundColor = button.graphics.newBrush(button.graphics.BrushType.SOLID_COLOR, color);\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/helpers/changeBgColor.js\n// module id = 3\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/helpers/changeBgColor.js?");
+eval("\n\nmodule.exports = function (button, color) {\n  button.graphics.backgroundColor = button.graphics.newBrush(button.graphics.BrushType.SOLID_COLOR, color);\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/helpers/changeBgColor.js\n// module id = 3\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/helpers/changeBgColor.js?");
 
 /***/ }),
 /* 4 */
